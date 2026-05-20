@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="it" class="is-loading">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="C4U – Coach for You. Coaching strutturato e orientato alla soluzione di Loredana Cirrincione. Per giovani, genitori e adulti. In italiano e svizzero tedesco." data-i18n="meta.description" />
+  <title>C4U — Coach for You | Loredana Cirrincione</title>
+
+  <link rel="icon" type="image/png" href="img/c4u_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ====================== PRELOADER ====================== -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__bg"></div>
+    <div class="preloader__stage">
+      <svg class="preloader__ring" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6" opacity=".6"/>
+      </svg>
+      <div class="preloader__steam">
+        <span></span><span></span><span></span>
+      </div>
+      <img class="preloader__logo" src="img/c4u_logo.png" alt="C4U" />
+      <div class="preloader__title">
+        <span class="preloader__brand">Coach for You</span>
+      </div>
+      <div class="preloader__progress"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ====================== NAV ====================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#home" class="nav__logo" aria-label="C4U Home">
+        <img src="img/c4u_logo.png" alt="C4U logo" />
+        <span class="nav__brand">
+          <strong>C4U</strong>
+          <em data-i18n="nav.tagline">Coach for You</em>
+        </span>
+      </a>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="#about" data-i18n="nav.about">Chi sono</a>
+        <a href="#approach" data-i18n="nav.approach">Il mio approccio</a>
+        <a href="#services" data-i18n="nav.services">Servizi</a>
+        <a href="#details" data-i18n="nav.details">Cosa offro</a>
+        <a href="#testimonials" data-i18n="nav.testimonials">Testimonianze</a>
+        <a href="#contact" data-i18n="nav.contact">Contatti</a>
+      </nav>
+
+      <div class="nav__right">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-switch__current" aria-haspopup="true" aria-expanded="false">
+            <span id="langCurrent">IT</span>
+            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-switch__list">
+            <li><button data-lang="it">Italiano</button></li>
+            <li><button data-lang="de">Deutsch</button></li>
+          </ul>
+        </div>
+
+        <a href="#contact" class="btn btn--small btn--gold" data-i18n="nav.book">Prenota</a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====================== HERO ====================== -->
+  <section class="hero" id="home">
+    <!-- Decorative doodles -->
+    <svg class="doodle doodle--star-1" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4l3 12 12 3-12 3-3 12-3-12-12-3 12-3z" fill="currentColor"/></svg>
+    <svg class="doodle doodle--swirl-1" viewBox="0 0 80 40" aria-hidden="true"><path d="M2 20c10-18 28-18 38 0s28 18 38 0" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+    <svg class="doodle doodle--heart-1" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28s-12-7-12-16a6 6 0 0112-2 6 6 0 0112 2c0 9-12 16-12 16z" fill="currentColor"/></svg>
+    <svg class="doodle doodle--dots" viewBox="0 0 100 60" aria-hidden="true">
+      <circle cx="5" cy="5" r="2" fill="currentColor"/><circle cx="25" cy="5" r="2" fill="currentColor"/><circle cx="45" cy="5" r="2" fill="currentColor"/><circle cx="65" cy="5" r="2" fill="currentColor"/><circle cx="85" cy="5" r="2" fill="currentColor"/>
+      <circle cx="5" cy="25" r="2" fill="currentColor"/><circle cx="25" cy="25" r="2" fill="currentColor"/><circle cx="45" cy="25" r="2" fill="currentColor"/><circle cx="65" cy="25" r="2" fill="currentColor"/><circle cx="85" cy="25" r="2" fill="currentColor"/>
+      <circle cx="5" cy="45" r="2" fill="currentColor"/><circle cx="25" cy="45" r="2" fill="currentColor"/><circle cx="45" cy="45" r="2" fill="currentColor"/><circle cx="65" cy="45" r="2" fill="currentColor"/><circle cx="85" cy="45" r="2" fill="currentColor"/>
+    </svg>
+    <svg class="doodle doodle--arrow" viewBox="0 0 80 30" aria-hidden="true"><path d="M4 22c14-22 36-22 60-8m-8-6l8 6-2 10" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+    <div class="container hero__inner">
+      <div class="hero__text reveal">
+        <span class="hero__hi">
+          <span class="hero__hi-text" data-i18n="hero.hi">Ciao!</span>
+        </span>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line" data-i18n="hero.title1">Connettiti</span>
+          <span class="hero__title-line hero__title-line--script">
+            <span class="hero__title-script" data-i18n="hero.title2">alle tue risorse</span>
+            <svg class="hero__underline" viewBox="0 0 320 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12c40-10 100-10 160-4s100 6 156-4" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg>
+          </span>
+          <span class="hero__title-line hero__title-line--small" data-i18n="hero.title3">per affrontare la tua sfida.</span>
+        </h1>
+
+        <p class="hero__lead" data-i18n="hero.lead">
+          C4U offre coaching strutturato e orientato alla soluzione. Per giovani, genitori e adulti — in italiano e svizzero tedesco.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--gold" data-i18n="hero.cta1">Prenota un colloquio</a>
+          <a href="#approach" class="btn btn--ghost" data-i18n="hero.cta2">Scopri il metodo</a>
+        </div>
+
+        <ul class="hero__features">
+          <li><span class="hero__feature-dot"></span><span data-i18n="hero.feature1">100% orientato alla soluzione</span></li>
+          <li><span class="hero__feature-dot"></span><span data-i18n="hero.feature2">In presenza e online</span></li>
+          <li><span class="hero__feature-dot"></span><span data-i18n="hero.feature3">IT · DE · Schweizerdeutsch</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual reveal reveal--delay">
+        <!-- Giant illustrated cup -->
+        <div class="hero__cup-stage">
+          <!-- Decorative scattered coffee beans -->
+          <svg class="hero__bean hero__bean--1" viewBox="0 0 24 36" aria-hidden="true">
+            <ellipse cx="12" cy="18" rx="9" ry="16" fill="#4a342a"/>
+            <path d="M12 4c-2 4-2 24 0 28" stroke="#2a1812" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+          <svg class="hero__bean hero__bean--2" viewBox="0 0 24 36" aria-hidden="true">
+            <ellipse cx="12" cy="18" rx="9" ry="16" fill="#4a342a"/>
+            <path d="M12 4c-2 4-2 24 0 28" stroke="#2a1812" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+          <svg class="hero__bean hero__bean--3" viewBox="0 0 24 36" aria-hidden="true">
+            <ellipse cx="12" cy="18" rx="9" ry="16" fill="#4a342a"/>
+            <path d="M12 4c-2 4-2 24 0 28" stroke="#2a1812" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+          <svg class="hero__bean hero__bean--4" viewBox="0 0 24 36" aria-hidden="true">
+            <ellipse cx="12" cy="18" rx="9" ry="16" fill="#4a342a"/>
+            <path d="M12 4c-2 4-2 24 0 28" stroke="#2a1812" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          </svg>
+
+          <!-- The illustrated cup (single SVG) -->
+          <svg class="hero__mug" viewBox="0 0 420 440" aria-hidden="true">
+            <!-- Steam -->
+            <g class="hero__mug-steam" stroke="#8a9a7b" stroke-width="6" fill="none" stroke-linecap="round" opacity=".55">
+              <path class="hero__mug-steam-path hero__mug-steam-path--1" d="M170 90c-12-22 16-36 4-58s16-36 0-56"/>
+              <path class="hero__mug-steam-path hero__mug-steam-path--2" d="M210 80c-12-22 16-36 4-58s16-36 0-56"/>
+              <path class="hero__mug-steam-path hero__mug-steam-path--3" d="M250 90c-12-22 16-36 4-58s16-36 0-56"/>
+            </g>
+
+            <!-- Saucer -->
+            <ellipse cx="210" cy="400" rx="180" ry="22" fill="#ebe2cc" stroke="#2a2a26" stroke-width="5"/>
+            <ellipse cx="210" cy="394" rx="155" ry="16" fill="#faf6ed" stroke="#2a2a26" stroke-width="3"/>
+
+            <!-- Handle -->
+            <path d="M320 200 C 380 200, 395 240, 380 280 C 365 320, 330 320, 320 310"
+                  fill="none" stroke="#2a2a26" stroke-width="10" stroke-linecap="round"/>
+            <path d="M320 218 C 365 218, 378 244, 365 274 C 352 304, 330 300, 320 290"
+                  fill="none" stroke="#2a2a26" stroke-width="5" stroke-linecap="round"/>
+
+            <!-- Cup body -->
+            <path d="M60 180 L70 360 C 70 380, 100 392, 210 392 C 320 392, 350 380, 350 360 L360 180 Z"
+                  fill="#ffffff" stroke="#2a2a26" stroke-width="6"/>
+
+            <!-- Cup rim (coffee surface ellipse) -->
+            <ellipse cx="210" cy="180" rx="150" ry="22" fill="#4a342a" stroke="#2a2a26" stroke-width="6"/>
+            <ellipse cx="210" cy="176" rx="146" ry="18" fill="#6a4a3a"/>
+
+            <!-- Crema froth ring -->
+            <ellipse cx="210" cy="178" rx="138" ry="14" fill="#c8a577" opacity=".85"/>
+            <ellipse cx="210" cy="178" rx="120" ry="10" fill="#e2cc8c" opacity=".7"/>
+
+            <!-- Latte art: stylized C heart -->
+            <g class="hero__latte" transform="translate(210 178)">
+              <!-- Heart silhouette in foam -->
+              <path d="M0 14 C -22 6, -36 -10, -22 -18 C -10 -22, -2 -10, 0 -4 C 2 -10, 10 -22, 22 -18 C 36 -10, 22 6, 0 14 Z"
+                    fill="#faf6ed" opacity=".95"/>
+              <path d="M0 14 C -22 6, -36 -10, -22 -18 C -10 -22, -2 -10, 0 -4 C 2 -10, 10 -22, 22 -18 C 36 -10, 22 6, 0 14 Z"
+                    fill="none" stroke="#a3823a" stroke-width="1.2" opacity=".5"/>
+            </g>
+
+            <!-- Cup highlight/shine -->
+            <path d="M85 210 L92 350" stroke="#ffffff" stroke-width="14" stroke-linecap="round" opacity=".7"/>
+
+            <!-- Cup body subtle shadow -->
+            <path d="M340 200 L334 358" stroke="#2a2a26" stroke-width="3" stroke-linecap="round" opacity=".08"/>
+
+            <!-- C4U monogram on the front of the cup -->
+            <g class="hero__mug-mono" transform="translate(210 290)">
+              <circle r="42" fill="none" stroke="#c9a961" stroke-width="3" opacity=".7"/>
+              <circle r="32" fill="none" stroke="#c9a961" stroke-width="2" opacity=".5"/>
+              <text text-anchor="middle" y="14" font-family="Cormorant Garamond, serif" font-size="38" font-weight="600" fill="#a3823a">C4U</text>
+            </g>
+          </svg>
+
+          <!-- Rotating sticker -->
+          <div class="hero__sticker">
+            <svg viewBox="0 0 160 160" aria-hidden="true" class="hero__sticker-svg">
+              <defs>
+                <path id="circlePath" d="M80,80 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/>
+              </defs>
+              <text class="hero__sticker-text">
+                <textPath href="#circlePath" startOffset="0">
+                  · COFFEE · COACHING · CONNECTION · CHANGE
+                </textPath>
+              </text>
+            </svg>
+            <div class="hero__sticker-center">
+              <strong>C4U</strong>
+              <em data-i18n="hero.sticker">est. 2023</em>
+            </div>
+          </div>
+
+          <!-- Little post-it note -->
+          <div class="hero__postit">
+            <span class="hero__postit-pin"></span>
+            <strong data-i18n="hero.postit.title">Today's special</strong>
+            <span data-i18n="hero.postit.text">Primo colloquio conoscitivo gratuito ☕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" aria-label="Scroll">
+      <span class="hero__scroll-text" data-i18n="hero.scroll">scorri giù</span>
+      <span class="hero__scroll-arrow"></span>
+    </a>
+  </section>
+
+  <!-- ====================== ABOUT ====================== -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <div class="about__media-frame">
+          <div class="about__media-tape"></div>
+          <img src="img/loredana_2.jpeg" alt="Loredana Cirrincione" />
+          <div class="about__media-caption" data-i18n="about.caption">Sei tu l'artefice del tuo cambiamento.</div>
+        </div>
+      </div>
+
+      <div class="about__content reveal">
+        <p class="eyebrow" data-i18n="about.eyebrow">Chi sono</p>
+        <h2 class="section__title" data-i18n="about.title">Questa sono io,<br/>Loredana Cirrincione.</h2>
+        <p class="section__lead" data-i18n="about.lead">
+          Negli ultimi 20 anni di lavoro con bambini, giovani e famiglie, ho approfondito l'importanza dello sviluppo attraverso le diverse fasi di crescita. Durante la mia formazione come Coach per Giovani e Famiglie, ho sviluppato le mie competenze e imparato a lavorare in modo orientato alla soluzione.
+        </p>
+        <p class="section__body" data-i18n="about.body">
+          Classe 1976, 25 anni sposata, 3 figli. Estroversa, entusiasta e solare. Offro coaching in italiano e svizzero tedesco, grazie alla mia competenza bilingue.
+        </p>
+
+        <ul class="about__facts">
+          <li><strong>20+</strong><span data-i18n="about.fact1">anni di esperienza</span></li>
+          <li><strong>3</strong><span data-i18n="about.fact2">certificazioni professionali</span></li>
+          <li><strong>2</strong><span data-i18n="about.fact3">lingue native</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="container timeline-wrap">
+      <h3 class="timeline__title" data-i18n="timeline.title">Tappe importanti</h3>
+      <p class="timeline__sub" data-i18n="timeline.subtitle">Le fasi significative del mio percorso professionale.</p>
+
+      <div class="timeline">
+        <article class="timeline__item reveal">
+          <div class="timeline__year">2021–2023</div>
+          <h4 data-i18n="timeline.t1.title">Coach sistemico CP</h4>
+          <p data-i18n="timeline.t1.text">Certificazione presso Coachingplus Sagl. L'obiettivo del coach sistemico è considerare i sistemi nei quali è inserita la persona, per generare consapevolezze e azioni che permettano di raggiungere gli obiettivi.</p>
+          <a href="https://coachingplus.ch" target="_blank" rel="noopener">coachingplus.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year">2023</div>
+          <h4 data-i18n="timeline.t2.title">Mentore Aziendale APF · dipl. Coach SCA</h4>
+          <p data-i18n="timeline.t2.text">I mentori aziendali con attestato professionale federale lavorano in modo orientato al processo, integrando i ruoli di coach, consulente e formatore.</p>
+          <a href="https://bp-mentor.ch" target="_blank" rel="noopener">bp-mentor.ch · s-c-a.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year">2023</div>
+          <h4 data-i18n="timeline.t3.title">Coach per Giovani & Famiglie</h4>
+          <p data-i18n="timeline.t3.text">Specializzazione nel settore dei giovani e delle famiglie presso la «Akademie für Familiencoaching».</p>
+          <a href="https://akademie-fuer-familiencoaching.de" target="_blank" rel="noopener">akademie-fuer-familiencoaching.de</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year" data-i18n="timeline.from">dal 2025</div>
+          <h4 data-i18n="timeline.t4.title">Coordinatrice ViViLUGANO</h4>
+          <p data-i18n="timeline.t4.text">«Comune di Lugano». La colonia diurna estiva ViViLugano offre incontro, divertimento e amicizia ai bambini e ragazzi a luglio.</p>
+          <a href="https://vivilugano.ch" target="_blank" rel="noopener">vivilugano.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year" data-i18n="timeline.from2">dal 2023</div>
+          <h4 data-i18n="timeline.t5.title">Responsabile Ticino — Champions</h4>
+          <p data-i18n="timeline.t5.text">«Champions — Studio & Sport» è un'offerta didattico-sportiva aperta e volontaria per bambini e ragazzi, gratuita e accessibile a tutti.</p>
+          <a href="https://we-are-champions.ch" target="_blank" rel="noopener">we-are-champions.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year" data-i18n="timeline.from3">dal 2023</div>
+          <h4 data-i18n="timeline.t6.title">Job Coach — Canton Ticino</h4>
+          <p data-i18n="timeline.t6.text">Supporto immediato a giovani nell'analisi della situazione e in vista di azioni future nel campo professionale.</p>
+          <a href="https://ti.ch" target="_blank" rel="noopener">ti.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year">2012–2024</div>
+          <h4 data-i18n="timeline.t7.title">Responsabile Ticino — Anno Intermedio</h4>
+          <p data-i18n="timeline.t7.text">«Anno Intermedio — Scuola Ortega» è considerato come un anno di preparazione al mondo dell'apprendistato.</p>
+          <a href="https://ortegaschule.ch" target="_blank" rel="noopener">ortegaschule.ch</a>
+        </article>
+
+        <article class="timeline__item reveal">
+          <div class="timeline__year">2002–2005</div>
+          <h4 data-i18n="timeline.t8.title">Fondatrice/Direttrice «Homeland»</h4>
+          <p data-i18n="timeline.t8.text">Asilo nido Liestal (BL). Operatrice socio-assistenziale AFC – Indirizzo bambini.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== APPROACH ====================== -->
+  <section class="section approach" id="approach">
+    <svg class="doodle doodle--star-1" viewBox="0 0 40 40" aria-hidden="true" style="top:14%;right:8%;left:auto;color:var(--gold-soft);"><path d="M20 4l3 12 12 3-12 3-3 12-3-12-12-3 12-3z" fill="currentColor"/></svg>
+    <div class="container approach__inner">
+      <div class="approach__head reveal">
+        <p class="eyebrow" data-i18n="approach.eyebrow">Coaching?</p>
+        <h2 class="section__title section__title--center" data-i18n="approach.title">Concentrarsi sulla <em>soluzione</em>, non sul problema.</h2>
+      </div>
+
+      <div class="approach__grid">
+        <div class="approach__col reveal">
+          <p data-i18n="approach.p1">Spesso si presume che i problemi possano essere risolti solo quando se ne comprendono le origini. Ho però notato che concentrarsi sul problema mantiene vive le emozioni e impedisce di risolverlo.</p>
+          <p data-i18n="approach.p2">Nel coaching ci focalizziamo sulla soluzione. Attraverso domande e interventi mirati, lavoriamo insieme per individuare la <strong>tua</strong> soluzione.</p>
+        </div>
+        <div class="approach__col reveal">
+          <p data-i18n="approach.p3">Il processo ti aiuta a riconoscere percorsi abituali, riscoprire nuove opportunità e sviluppare nuove soluzioni.</p>
+          <p data-i18n="approach.p4">È come accompagnarti a trovare l'interruttore della luce e, di conseguenza, riscoprire il potenziale della tua personalità.</p>
+        </div>
+      </div>
+
+      <div class="approach__quote reveal">
+        <svg class="approach__quote-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M14 30c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3zm18 0c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3z" fill="currentColor"/></svg>
+          <p data-i18n="approach.quote">Tu sei l'artefice del tuo cambiamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SERVICES (4 caffè) ====================== -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services__head reveal">
+        <p class="eyebrow" data-i18n="services.eyebrow">Il mio servizio</p>
+        <h2 class="section__title section__title--center" data-i18n="services.title">Un coaching su misura,<br/>come una <em>buona tazza</em> di caffè.</h2>
+        <p class="section__lead section__lead--center" data-i18n="services.lead">
+          Mi sono ispirata a un grande coffeeshop americano per i miei quattro servizi: <strong>Small</strong>, <strong>Medium</strong>, <strong>Large</strong> e <strong>X-Large</strong>. Mi piace pensare al nostro incontro seduti a un tavolino, mentre gustiamo un piacevole caffè. La dimensione della tazza influisce sul tipo di incontro, sul contenuto e… naturalmente sul prezzo.
+        </p>
+      </div>
+
+      <div class="services__grid">
+        <!-- SMALL -->
+        <article class="service-card reveal" data-size="s">
+          <div class="service-card__top">
+            <div class="cup cup--s" aria-hidden="true"><div class="cup__steam"><span></span><span></span><span></span></div></div>
+            <div class="service-card__size">S</div>
+          </div>
+          <h3 data-i18n="services.s.title">Small · Accompagnamento</h3>
+          <p class="service-card__target" data-i18n="services.s.target">Per teenager e giovani</p>
+          <p class="service-card__desc" data-i18n="services.s.desc">Semplice, rapido e simpatico. Per parlare di esami, scuola, amicizie, futuro. Nessuna terapia: solo ascolto e accompagnamento.</p>
+          <div class="service-card__bottom">
+            <div class="service-card__price"><span>CHF</span><strong>45</strong><em data-i18n="services.duration30">30 min</em></div>
+            <a href="#details" class="service-card__link" data-i18n="services.detail">Vedi dettaglio →</a>
+          </div>
+        </article>
+
+        <!-- MEDIUM -->
+        <article class="service-card reveal" data-size="m">
+          <div class="service-card__top">
+            <div class="cup cup--m" aria-hidden="true"><div class="cup__steam"><span></span><span></span><span></span></div></div>
+            <div class="service-card__size">M</div>
+          </div>
+          <h3 data-i18n="services.m.title">Medium · Consigli/Suggerimenti</h3>
+          <p class="service-card__target" data-i18n="services.m.target">Per genitori ed educatori</p>
+          <p class="service-card__desc" data-i18n="services.m.desc">Brevi, semplici e incoraggianti. Consigli pratici sull'educazione e supporto nella vita quotidiana con i bambini.</p>
+          <div class="service-card__bottom">
+            <div class="service-card__price"><span>CHF</span><strong>70</strong><em data-i18n="services.duration60">60 min</em></div>
+            <a href="#details" class="service-card__link" data-i18n="services.detail">Vedi dettaglio →</a>
+          </div>
+        </article>
+
+        <!-- LARGE -->
+        <article class="service-card reveal" data-size="l">
+          <div class="service-card__top">
+            <div class="cup cup--l" aria-hidden="true"><div class="cup__steam"><span></span><span></span><span></span></div></div>
+            <div class="service-card__size">L</div>
+          </div>
+          <h3 data-i18n="services.l.title">Large · Job Coach</h3>
+          <p class="service-card__target" data-i18n="services.l.target">Per giovani nel mondo del lavoro</p>
+          <p class="service-card__desc" data-i18n="services.l.desc">Accompagnamento mirato per chi cerca lavoro o riscontra difficoltà nell'apprendistato. Mediazione tra apprendista e datore di lavoro.</p>
+          <div class="service-card__bottom">
+            <div class="service-card__price"><span>CHF</span><strong>80</strong><em data-i18n="services.duration60">60 min</em></div>
+            <a href="#details" class="service-card__link" data-i18n="services.detail">Vedi dettaglio →</a>
+          </div>
+        </article>
+
+        <!-- XLARGE -->
+        <article class="service-card service-card--featured reveal" data-size="xl">
+          <div class="service-card__badge" data-i18n="services.xl.badge">Più richiesto</div>
+          <div class="service-card__top">
+            <div class="cup cup--xl" aria-hidden="true"><div class="cup__steam"><span></span><span></span><span></span></div></div>
+            <div class="service-card__size">XL</div>
+          </div>
+          <h3 data-i18n="services.xl.title">X-Large · Coaching</h3>
+          <p class="service-card__target" data-i18n="services.xl.target">Per adulti e giovani dai 18 anni</p>
+          <p class="service-card__desc" data-i18n="services.xl.desc">Processo strutturato e orientato alla soluzione per chi vuole superare una sfida personale, professionale o relazionale.</p>
+          <div class="service-card__bottom">
+            <div class="service-card__price"><span>CHF</span><strong>120</strong><em data-i18n="services.duration60">60 min</em></div>
+            <a href="#details" class="service-card__link" data-i18n="services.detail">Vedi dettaglio →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Shining Through -->
+      <aside class="shining reveal">
+        <div class="shining__num">.01</div>
+        <div class="shining__content">
+          <p class="eyebrow" data-i18n="shining.eyebrow">Shining Through · Inoltre</p>
+          <h3 data-i18n="shining.title">Serate informative, corsi e seminari</h3>
+          <p data-i18n="shining.text">Sul tema dell'adolescenza e sulle attuali sfide dei giovani. Per scuole, associazioni e gruppi di genitori.</p>
+        </div>
+        <a href="#contact" class="btn btn--ghost btn--small" data-i18n="shining.cta">Richiedi informazioni</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ====================== DETAILS (Cosa?) ====================== -->
+  <section class="section details" id="details">
+    <div class="container">
+      <div class="details__head reveal">
+        <p class="eyebrow" data-i18n="details.eyebrow">Più nel dettaglio</p>
+        <h2 class="section__title section__title--center" data-i18n="details.title">Cosa offro, nello specifico.</h2>
+        <p class="section__lead section__lead--center" data-i18n="details.lead">Se rimangono incertezze dopo aver letto, contattami pure: ogni domanda è un buon punto di partenza.</p>
+      </div>
+
+      <div class="details__list">
+        <details class="detail-item reveal">
+          <summary>
+            <span class="detail-item__size">S</span>
+            <span class="detail-item__title" data-i18n="details.s.title">Small · Accompagnamento</span>
+            <svg class="detail-item__chev" viewBox="0 0 12 12" width="14" height="14"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="detail-item__body">
+            <p data-i18n="details.s.p1">«Accompagnamento» è un servizio semplice e accessibile, rivolto in particolare agli adolescenti e ai giovani. Spesso i teenager associano il coaching a una terapia. È esattamente quello che voglio evitare.</p>
+            <p data-i18n="details.s.p2">I giovani sentono il bisogno di parlare delle faccende quotidiane, senza dover sempre affrontare tutto in modo psicanalitico. In questa fase, i genitori non sono sempre i primi e migliori punti di riferimento.</p>
+            <p data-i18n="details.s.p3">Vuoi parlare del tuo stressante esame? C'è un nuovo ragazzo/a nella tua classe? O sei preoccupato/a per il futuro? Nessun problema… sono qui per ascoltarti volentieri.</p>
+          </div>
+        </details>
+
+        <details class="detail-item reveal">
+          <summary>
+            <span class="detail-item__size">M</span>
+            <span class="detail-item__title" data-i18n="details.m.title">Medium · Consigli/Suggerimenti</span>
+            <svg class="detail-item__chev" viewBox="0 0 12 12" width="14" height="14"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="detail-item__body">
+            <p data-i18n="details.m.p1">«Consigli/Suggerimenti» è rivolto ai genitori o agli educatori in generale. Come per l'Accompagnamento, gli interventi sono brevi, semplici e incoraggianti. Niente terapia.</p>
+            <p data-i18n="details.m.p2">Osservo che i genitori, e soprattutto le madri, lottano con sensi di colpa: modalità di parto, allattamento, cura dei bambini, lavoro, comportamento. Ci sono insidie ovunque.</p>
+            <p data-i18n="details.m.p3">L'attenzione è quindi focalizzata su consigli pratici nell'educazione. Sono disponibile anche per un supporto generale nella vita quotidiana con i bambini: essendo madre di tre figli, capisco bene cosa significhi gestire tutto.</p>
+            <p class="detail-item__highlight" data-i18n="details.m.p4">A prescindere dalla tua situazione: stai facendo un ottimo lavoro.</p>
+          </div>
+        </details>
+
+        <details class="detail-item reveal">
+          <summary>
+            <span class="detail-item__size">L</span>
+            <span class="detail-item__title" data-i18n="details.l.title">Large · Job Coach</span>
+            <svg class="detail-item__chev" viewBox="0 0 12 12" width="14" height="14"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="detail-item__body">
+            <p data-i18n="details.l.p1">«Job Coach» è un servizio di accompagnamento mirato per i giovani che riscontrano difficoltà nel mondo del lavoro. Uno dei compiti chiave è la mediazione tra il datore di lavoro e l'apprendista.</p>
+            <p data-i18n="details.l.p2">Hai bisogno di sostegno nella ricerca di un lavoro? Riscontri delle difficoltà con il tuo/a responsabile di formazione?</p>
+            <p data-i18n="details.l.p3">Attiva come Job Coach per il Canton Ticino, sostengo attualmente diversi giovani nel loro percorso di apprendistato.</p>
+          </div>
+        </details>
+
+        <details class="detail-item reveal">
+          <summary>
+            <span class="detail-item__size">XL</span>
+            <span class="detail-item__title" data-i18n="details.xl.title">X-Large · Coaching</span>
+            <svg class="detail-item__chev" viewBox="0 0 12 12" width="14" height="14"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="detail-item__body">
+            <p data-i18n="details.xl.p1">«Coaching» è un processo strutturato e orientato alla soluzione. Generalmente è rivolto a tutti gli adulti e ai giovani a partire dai 18 anni.</p>
+            <p data-i18n="details.xl.p2">Immagina che Berta voglia un coaching perché riscontra sfide relazionali con la figlia adolescente. Abbiamo due protagonisti: Loredana (coach) e Berta (coachee). Berta, con l'aiuto del coach, definisce un obiettivo rilevante per la sua situazione. Da lì, il coach guida il processo verso quell'obiettivo.</p>
+            <p data-i18n="details.xl.p3">A volte vediamo l'albero e non la foresta: perdiamo di vista il quadro generale a causa di una concentrazione eccessiva sui dettagli. Nel coaching, Berta ha l'opportunità di fare un passo indietro, osservare e considerare le conseguenze del proprio modo di fare — scoprendo nuove prospettive e soluzioni.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TESTIMONIALS ====================== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials__head reveal">
+        <p class="eyebrow" data-i18n="testimonials.eyebrow">My Clients Say</p>
+        <h2 class="section__title section__title--center" data-i18n="testimonials.title">Le voci di chi ha intrapreso il percorso.</h2>
+      </div>
+
+      <div class="testimonials__grid">
+        <figure class="testimonial reveal">
+          <div class="testimonial__mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 30c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3zm18 0c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3z" fill="currentColor"/></svg></div>
+          <blockquote data-i18n="testimonials.t1.text">Il coaching l'ho vissuto come un cambiamento di vita. Loredana ha la capacità di accogliermi come persona esattamente dove mi trovo. Esamina il problema da un'angolazione diversa da quella che mi sarei aspettata. Mi ha costantemente incoraggiata a "fidarmi di me stessa", il che mi ha fatto progredire nella mia vita. Il suo stile chiaro, estremamente empatico e positivo mi motiva a perseverare.</blockquote>
+          <figcaption>
+            <strong>S.W.</strong>
+            <span data-i18n="testimonials.t1.role">Operatrice sociosanitaria</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial reveal">
+          <div class="testimonial__mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 30c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3zm18 0c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3z" fill="currentColor"/></svg></div>
+          <blockquote data-i18n="testimonials.t2.text">Grazie all'aiuto di Loredana ho potuto trovare soluzioni a diverse sfide lavorative e personali, in modo leggero ed efficace.</blockquote>
+          <figcaption>
+            <strong>Susi</strong>
+            <span data-i18n="testimonials.t2.role">Maestra elementare</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial reveal">
+          <div class="testimonial__mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14 30c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3zm18 0c-4 0-7-3-7-7 0-7 6-13 13-13v4c-5 0-9 4-9 9 0 3 1 4 3 4v3z" fill="currentColor"/></svg></div>
+          <blockquote data-i18n="testimonials.t3.text">Il coaching online con te è stato davvero prezioso. Mi sono sentita sempre compresa e ben accompagnata. Grazie ai tuoi spunti ho imparato a gestire meglio il mio tempo, a rispettare i miei valori e a trovare nuove fonti di energia nei momenti difficili. Mi ha dato tanta chiarezza, motivazione e serenità — grazie di cuore.</blockquote>
+          <figcaption>
+            <strong>Natalie</strong>
+            <span data-i18n="testimonials.t3.role">Mamma</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== CTA ====================== -->
+  <section class="cta-band reveal">
+    <div class="container cta-band__inner">
+      <div>
+        <p class="eyebrow eyebrow--light" data-i18n="cta.eyebrow">Inizia ora</p>
+        <h2 data-i18n="cta.title">Fissa il tuo primo appuntamento<br/>per diventare l'artefice del tuo cambiamento.</h2>
+      </div>
+      <a href="#contact" class="btn btn--gold btn--large" data-i18n="cta.button">Prenota ora</a>
+    </div>
+  </section>
+
+  <!-- ====================== CONTACT ====================== -->
+  <section class="section contact" id="contact">
+    <div class="container contact__grid">
+      <div class="contact__info reveal">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contatto</p>
+        <h2 class="section__title" data-i18n="contact.title">Sono lieta di ricevere tue notizie.</h2>
+        <p class="section__lead" data-i18n="contact.lead">Ogni contatto è un'occasione per scoprire qualcosa di nuovo. Sarò felice di fare la tua conoscenza.</p>
+
+        <ul class="contact__list">
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s-8-7-8-13a8 8 0 1116 0c0 6-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+            <div>
+              <span data-i18n="contact.address.label">Indirizzo</span>
+              <strong>Strada di Terrieri 10<br/>6967 Dino, Svizzera</strong>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <div>
+              <span data-i18n="contact.phone.label">Telefono</span>
+              <a href="tel:+41766821719"><strong>+41 (0)76 682 17 19</strong></a>
+            </div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div>
+              <span data-i18n="contact.email.label">Email</span>
+              <a href="mailto:contact@coach-4u.ch"><strong>contact@coach-4u.ch</strong></a>
+            </div>
+          </li>
+        </ul>
+
+        <div class="contact__social">
+          <span data-i18n="contact.social">Social networks</span>
+          <a href="https://www.facebook.com/coach4you.2024" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/uas/login?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F102637051%2Fadmin%2Ffeed%2Fposts%2F%3FfeedType%3Dfollowing" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V10.5H5.67v7.84h2.67zM7 9.28a1.55 1.55 0 100-3.1 1.55 1.55 0 000 3.1zm11.34 9.06v-4.45c0-2.39-1.27-3.5-2.97-3.5-1.36 0-1.97.75-2.3 1.27V10.5H10.4v7.84h2.67v-4.37c0-.24.02-.47.09-.64.19-.47.62-.96 1.34-.96.94 0 1.32.71 1.32 1.76v4.21h2.67z"/></svg>
+          </a>
+        </div>
+
+        <div class="contact__associations">
+          <span data-i18n="contact.member">Membro</span>
+          <img src="img/SCA_logo.png" alt="Swiss Coaching Association" />
+        </div>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm" action="mailto:contact@coach-4u.ch" method="post" enctype="text/plain">
+        <h3 data-i18n="contact.form.title">Scrivimi un messaggio</h3>
+        <p data-i18n="contact.form.subtitle">Risponderò il prima possibile.</p>
+
+        <div class="form-row">
+          <label>
+            <span data-i18n="contact.form.name">Nome e cognome</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span data-i18n="contact.form.email">Email</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <label>
+          <span data-i18n="contact.form.subject">Oggetto</span>
+          <select name="subject">
+            <option data-i18n="contact.form.subject1">Vorrei prenotare un colloquio</option>
+            <option data-i18n="contact.form.subject2">Informazioni sui servizi</option>
+            <option data-i18n="contact.form.subject3">Serate informative / Seminari</option>
+            <option data-i18n="contact.form.subject4">Altro</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="contact.form.message">Messaggio</span>
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn btn--gold" data-i18n="contact.form.submit">Invia messaggio</button>
+        <p class="form-note" data-i18n="contact.form.note">Premendo "Invia" si aprirà il tuo client email predefinito.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="img/c4u_logo.png" alt="C4U" />
+        <div>
+          <strong>C4U</strong>
+          <em data-i18n="footer.tagline">Coach for You · Loredana Cirrincione</em>
+        </div>
+      </div>
+      <nav class="footer__nav">
+        <a href="#about" data-i18n="nav.about">Chi sono</a>
+        <a href="#services" data-i18n="nav.services">Servizi</a>
+        <a href="#details" data-i18n="nav.details">Cosa offro</a>
+        <a href="#contact" data-i18n="nav.contact">Contatti</a>
+      </nav>
+      <div class="footer__meta">
+        <span>© <span id="year"></span> C4U · Loredana Cirrincione</span>
+        <span data-i18n="footer.rights">Tutti i diritti riservati.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
