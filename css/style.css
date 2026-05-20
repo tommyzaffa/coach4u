@@ -238,11 +238,6 @@ html {
 }
 html::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
-/* Re-enable text selection where users may need to copy (contact details, form fields) */
-input, textarea, select,
-.contact__list a, .contact__list strong,
-.contact__list { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
-
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -253,12 +248,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  touch-action: pan-y;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Disable text selection on every element so iOS/Android can't accidentally
+   start a selection gesture when the user is trying to swipe. */
+html, body, h1, h2, h3, h4, h5, h6, p, span, em, strong, a, li, ul, ol,
+blockquote, figure, figcaption, article, section, header, footer, nav,
+main, aside, div, label, summary, details, .reveal, .doodle {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+  touch-action: pan-y !important;
+}
+
+/* Re-enable selection where users may need to copy (contact details, form fields) */
+input, textarea, select,
+.contact__list, .contact__list *,
+.contact__form input, .contact__form textarea, .contact__form select {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+  -webkit-touch-callout: default !important;
 }
 body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
@@ -519,6 +534,9 @@ h1, h2, h3, h4 {
 .nav__toggle[aria-expanded="true"] span:nth-child(2) { transform: translate(-50%, -50%) scaleX(0); opacity: 0; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translate(-50%, -50%) rotate(-45deg); }
 
+/* Mobile-only lang switcher inside the drawer */
+.nav__menu-lang { display: none; }
+
 /* Language switcher */
 .lang-switch { position: relative; }
 .lang-switch__current {
@@ -594,6 +612,34 @@ h1, h2, h3, h4 {
   .nav__menu a { font-size: 18px; }
   .nav__toggle { display: flex; }
   .nav .btn { display: none; }
+  .lang-switch { display: none; }
+
+  /* Language picker pinned near the bottom of the drawer */
+  .nav__menu-lang {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    width: 100%;
+  }
+  .nav__menu-lang button {
+    flex: 0 0 auto;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    transition: all .2s var(--ease);
+  }
+  .nav__menu-lang button.active {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
 }
 
 /* =========== HERO — Coffee corner ============ */
@@ -2019,6 +2065,49 @@ h1, h2, h3, h4 {
   .footer__brand { justify-content: center; }
   .footer__meta { text-align: center; }
   .footer__nav { flex-wrap: wrap; justify-content: center; }
+}
+
+/* =========== WhatsApp floating button =========== */
+.wa-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px -8px rgba(37, 211, 102, .55), 0 4px 12px rgba(0,0,0,.18);
+  z-index: 90;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.wa-fab svg { width: 30px; height: 30px; }
+.wa-fab:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 18px 36px -8px rgba(37, 211, 102, .65), 0 6px 14px rgba(0,0,0,.22);
+  color: #fff;
+}
+.wa-fab::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: #25D366;
+  opacity: .35;
+  z-index: -1;
+  animation: waPulse 2.2s ease-out infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(.9); opacity: .45; }
+  70%  { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+@media (max-width: 720px) {
+  .wa-fab { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .wa-fab svg { width: 26px; height: 26px; }
 }
 
 /* =========== REVEAL ANIMATION =========== */

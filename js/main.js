@@ -134,7 +134,8 @@
   const langCurrent = document.getElementById('langCurrent');
   if (langSwitch) {
     const trigger = langSwitch.querySelector('.lang-switch__current');
-    const buttons = langSwitch.querySelectorAll('button[data-lang]');
+    // Include lang buttons inside the desktop switcher AND inside the mobile drawer
+    const buttons = document.querySelectorAll('button[data-lang]');
 
     trigger.addEventListener('click', (e) => {
       e.stopPropagation();
