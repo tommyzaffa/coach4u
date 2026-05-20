@@ -34,15 +34,18 @@
 
   const finishPreloader = () => {
     if (!preloader) return;
+    // Remove the passive:false touchmove listener FIRST. iOS Safari otherwise
+    // keeps the page in a "blocked scroll" state until the listener is gone,
+    // which manifests as scroll not working when starting from text.
+    window.removeEventListener('wheel', blockEvent);
+    window.removeEventListener('touchmove', blockEvent);
+    window.removeEventListener('keydown', blockKey);
     preloader.classList.add('is-done');
     document.documentElement.classList.remove('is-loading');
     window.scrollTo(0, 0);
     // Remove from DOM after fade-out
     setTimeout(() => {
       preloader && preloader.parentNode && preloader.parentNode.removeChild(preloader);
-      window.removeEventListener('wheel', blockEvent);
-      window.removeEventListener('touchmove', blockEvent);
-      window.removeEventListener('keydown', blockKey);
     }, 1500);
   };
 
