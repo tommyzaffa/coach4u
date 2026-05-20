@@ -43,7 +43,7 @@
       window.removeEventListener('wheel', blockEvent);
       window.removeEventListener('touchmove', blockEvent);
       window.removeEventListener('keydown', blockKey);
-    }, 950);
+    }, 1500);
   };
 
   const startFinish = () => {

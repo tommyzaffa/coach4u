@@ -63,7 +63,7 @@ html.is-loading body {
   display: grid;
   place-items: center;
   pointer-events: all;
-  transition: opacity .9s cubic-bezier(.65, 0, .35, 1), visibility .9s;
+  transition: opacity 1.4s cubic-bezier(.22, .61, .36, 1), visibility 0s linear 1.4s;
 }
 .preloader__bg {
   position: absolute;
@@ -202,7 +202,7 @@ html.is-loading body {
 
 /* Outro — unified fade on the whole preloader, stage scales gently */
 .preloader__stage {
-  transition: transform .9s cubic-bezier(.65, 0, .35, 1), opacity .9s cubic-bezier(.65, 0, .35, 1);
+  transition: transform 1.4s cubic-bezier(.22, .61, .36, 1), opacity 1.4s cubic-bezier(.22, .61, .36, 1);
 }
 .preloader.is-done {
   opacity: 0;
@@ -212,20 +212,12 @@ html.is-loading body {
   transform: scale(.96);
   opacity: 0;
 }
-/* Freeze all child animations during outro so nothing keeps moving while fading */
-.preloader.is-done .preloader__logo,
-.preloader.is-done .preloader__ring,
-.preloader.is-done .preloader__brand,
-.preloader.is-done .preloader__steam,
-.preloader.is-done .preloader__steam span,
-.preloader.is-done .preloader__progress,
-.preloader.is-done .preloader__progress span {
-  animation: none !important;
-}
+/* During outro let child animations keep playing — abruptly freezing them
+   creates a hard visual snap. They fade out gracefully via the stage opacity. */
 /* Smoothly fade steam together with the rest, no snap */
 .preloader__steam,
 .preloader__steam span {
-  transition: opacity .7s cubic-bezier(.65, 0, .35, 1);
+  transition: opacity 1.1s cubic-bezier(.22, .61, .36, 1);
 }
 .preloader.is-done .preloader__steam,
 .preloader.is-done .preloader__steam span {
@@ -246,6 +238,11 @@ html {
 }
 html::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
+/* Re-enable text selection where users may need to copy (contact details, form fields) */
+input, textarea, select,
+.contact__list a, .contact__list strong,
+.contact__list { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -259,6 +256,9 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   touch-action: pan-y;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
@@ -421,13 +421,13 @@ h1, h2, h3, h4 {
   top: 0; left: 0; right: 0;
   z-index: 100;
   background: rgba(250, 246, 237, 0);
-  backdrop-filter: blur(0);
-  transition: background .35s var(--ease), backdrop-filter .35s var(--ease), padding .35s var(--ease), box-shadow .35s var(--ease);
+  /* NOTE: do NOT use backdrop-filter here — it would create a containing block
+     for position:fixed descendants (.nav__menu mobile drawer) and break layout. */
+  transition: background .35s var(--ease), padding .35s var(--ease), box-shadow .35s var(--ease);
   padding: 18px 0;
 }
 .nav.scrolled {
-  background: rgba(250, 246, 237, .92);
-  backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(250, 246, 237, .96);
   padding: 10px 0;
   box-shadow: 0 1px 0 var(--line);
 }
