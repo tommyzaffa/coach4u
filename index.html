@@ -309,7 +309,7 @@
 
   <!-- ====================== APPROACH ====================== -->
   <section class="section approach" id="approach">
-    <svg class="doodle doodle--star-1" viewBox="0 0 40 40" aria-hidden="true" style="top:14%;right:8%;left:auto;color:var(--gold-soft);"><path d="M20 4l3 12 12 3-12 3-3 12-3-12-12-3 12-3z" fill="currentColor"/></svg>
+    <svg class="doodle doodle--star-1" viewBox="0 0 40 40" width="28" height="28" aria-hidden="true" style="top:14%;right:8%;left:auto;width:28px;height:28px;color:var(--gold-soft);"><path d="M20 4l3 12 12 3-12 3-3 12-3-12-12-3 12-3z" fill="currentColor"/></svg>
     <div class="container approach__inner">
       <div class="approach__head reveal">
         <p class="eyebrow" data-i18n="approach.eyebrow">Coaching?</p>
@@ -585,9 +585,13 @@
         </div>
       </div>
 
-      <form class="contact__form reveal" id="contactForm" action="mailto:contact@coach-4u.ch" method="post" enctype="text/plain">
+      <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <h3 data-i18n="contact.form.title">Scrivimi un messaggio</h3>
         <p data-i18n="contact.form.subtitle">Risponderò il prima possibile.</p>
+
+        <!-- Honeypot anti-spam (Formspree ignores submissions where this is filled) -->
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_subject" value="Nuovo messaggio dal sito C4U" />
 
         <div class="form-row">
           <label>
@@ -613,7 +617,7 @@
           <textarea name="message" rows="5" required></textarea>
         </label>
         <button type="submit" class="btn btn--gold" data-i18n="contact.form.submit">Invia messaggio</button>
-        <p class="form-note" data-i18n="contact.form.note">Premendo "Invia" si aprirà il tuo client email predefinito.</p>
+        <p class="form-note" data-i18n="contact.form.note">Risponderò entro pochi giorni lavorativi.</p>
       </form>
     </div>
   </section>

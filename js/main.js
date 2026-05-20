@@ -95,7 +95,7 @@
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__menu a');
   const setActive = () => {
-    const scrollPos = window.scrollY + 110;
+    const scrollPos = window.scrollY + (window.innerWidth <= 768 ? 80 : 110);
     let current = '';
     sections.forEach((sec) => {
       if (scrollPos >= sec.offsetTop) current = sec.id;
@@ -209,7 +209,8 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
-      const top = target.getBoundingClientRect().top + window.scrollY - 60;
+      const offset = window.innerWidth <= 768 ? 40 : 60;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
       history.replaceState(null, '', href);
     });

@@ -145,7 +145,7 @@ window.I18N = {
         subject4: "Altro",
         message: "Messaggio",
         submit: "Invia messaggio",
-        note: "Premendo \"Invia\" si aprirà il tuo client email predefinito."
+        note: "Risponderò entro pochi giorni lavorativi."
       }
     },
     footer: {
@@ -294,7 +294,7 @@ window.I18N = {
         subject4: "Sonstiges",
         message: "Nachricht",
         submit: "Nachricht senden",
-        note: "Beim Klick auf \"Senden\" öffnet sich dein Standard-Mailprogramm."
+        note: "Ich antworte innerhalb weniger Werktage."
       }
     },
     footer: {
